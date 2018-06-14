@@ -3,7 +3,7 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 from tornado.options import define, options
 from tornado.web import Application
-from todo.views import HelloWorld
+from todo.views import InfoView
 
 # add these
 import os
@@ -16,7 +16,7 @@ factory = make_session_factory(os.environ.get('DATABASE_URL', ''))
 def main():
     """Construct and serve the tornado application."""
     app = Application([
-        ('/', HelloWorld)
+        ('/', InfoView)
     ],
         session_factory=factory
     )
