@@ -1,9 +1,10 @@
 # views.py
 import json
+from tornado_sqlalchemy import SessionMixin
 from tornado.web import RequestHandler
 
 
-class BaseView(RequestHandler):
+class BaseView(RequestHandler, SessionMixin):
     """Base view for this application."""
 
     def set_default_headers(self):
