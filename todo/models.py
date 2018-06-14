@@ -3,11 +3,12 @@ from datetime import datetime
 from tornado.gen import coroutine
 from tornado_sqlalchemy import as_future
 from todo.models import Profile, Task
+from todo.views import InfoView
 
 # the BaseView is above here
 
 
-class TaskListView(BaseView):
+class TaskListView(InfoView):
     """View for reading and adding new tasks."""
     SUPPORTED_METHODS = ("GET", "POST",)
 
